@@ -1,1 +1,1 @@
-Seier. Alt annet suger ballestein.
+firebase: https://powerhack.firebaseio.com/
