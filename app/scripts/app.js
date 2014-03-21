@@ -5,7 +5,9 @@ angular.module('powerApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'firebase'
+  'firebase',
+  'powerApp_base64',
+  'powerApp_auth'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
