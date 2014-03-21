@@ -1,21 +1,25 @@
-<div ng-include="'partials/navbar'"></div>
+<!-- <div ng-include="'partials/navbar'"></div> -->
 
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+  <h1>Bartehagen</h1>
   <p class="lead">
-    <img src="images/d41d8cd9.yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p ng-click="testApi()"><a class="btn btn-lg btn-success" ng-href="#">Test API</a></p>
+        Velkommen til kampen, {{auth.user.name}}!
+    </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#" ng-click="fetch()">API test!</a></p>
 </div>
 
 <div class="row marketing">
+
+  <!--
   <div ng-repeat="thing in awesomeThings">
       <h4>{{thing.name}}</h4>
       <p>{{thing.info}}</p>
   </div>
+  -->
 </div>
 
+
 <div class="footer">
-  <p>♥ from the Yeoman team</p>
+  <button class="btn btn-default" ng-click="logout()">Log out</button>
+  <p>♥ Gløshaugen vgs ♥</p>
 </div>
