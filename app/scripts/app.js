@@ -7,7 +7,9 @@ angular.module('powerApp', [
   'ngRoute',
   'angularfire.firebase',
   'angularfire.login',
-  'firebase'
+  'firebase',
+  'powerApp_base64',
+  'powerApp_auth'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
