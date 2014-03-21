@@ -25,7 +25,6 @@ angular.module('powerApp')
 			});
 	};
 
-
   var userRef = firebaseRef("users/");
   $scope.nameArray = [];
   
@@ -33,12 +32,17 @@ angular.module('powerApp')
     var i=0;
     dataSnapshot.forEach(function(childSnapshot) {
     $scope.nameArray[i] = childSnapshot.val();
-    
-    console.log($scope.nameArray);
+
+    if($scope.nameArray[i].userinfo.displayName == $scope.auth.user.name){
+      $scope.coins = $scope.nameArray[i].score.coins;
+    };
+
     i++;
     });
     $scope.$apply($scope.nameArray);
   });
+
+
 
         
 
