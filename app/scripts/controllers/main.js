@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('powerApp')
-  .controller('MainCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin) {
+  .controller('MainCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin, firebaseRef) {
 	$scope.method = 'GET';
 	$scope.url = 'https://api.demosteinkjer.no/meters/0e6e348bfdb74432b6709526527c3d12/latest?seriesType=ActivePlus';
 
@@ -24,6 +24,23 @@ angular.module('powerApp')
 				console.log(status);
 			});
 	};
+
+
+  var userRef = firebaseRef("users/");
+  $scope.nameArray = [];
+  
+  userRef.once("value", function(dataSnapshot){
+    var i=0;
+    dataSnapshot.forEach(function(childSnapshot) {
+    $scope.nameArray[i] = childSnapshot.val();
+    
+    console.log($scope.nameArray);
+    i++;
+    });
+    $scope.$apply($scope.nameArray);
+  });
+
+        
 
   $scope.logout = function() {
       simpleLogin.logout(function(err) {

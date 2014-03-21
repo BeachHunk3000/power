@@ -14,7 +14,18 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
       var usersRef = firebaseRef("users");
       usersRef.once('value', function(dataSnapshot) {
         if(!dataSnapshot.hasChild(user.uid)){
-          var userRef = firebaseRef("users/" + user.uid + '/user_info/');
+          var userRef = firebaseRef("users/" + user.uid + '/userinfo');
+          
+          var scoreTimeRef = firebaseRef("users/" + user.uid + "/score/time");
+          var scorePointsRef = firebaseRef("users/" + user.uid + "/score/points");
+          var scoreValueRef = firebaseRef("users/" + user.uid + "/score/value");
+
+          var coinRef = firebaseRef("users/" + user.uid + "/coin");
+
+          coinRef.set(100);
+          scoreValueRef.set(0);
+          scoreTimeRef.set(0);
+          scorePointsRef.set(0);
           userRef.set(user);
         };
       });

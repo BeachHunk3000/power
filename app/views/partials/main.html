@@ -6,16 +6,14 @@
         Velkommen til kampen, {{auth.user.name}}!
     </p>
   <p><a class="btn btn-lg btn-success" ng-href="#" ng-click="fetch()">API test!</a></p>
+
 </div>
 
 <div class="row marketing">
 
-  <!--
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
-  </div>
-  -->
+
+  <div ng-repeat="stuff in nameArray"><em>{{stuff.userinfo.first_name}}</em>: {{stuff.score.points}} </div>
+
 </div>
 
 
