@@ -6,6 +6,6 @@ angular.module('powerApp')
       $scope.awesomeThings = awesomeThings;
     });
 
-    $scope.items = $firebase(new Firebase('https://powerhack.firebaseio.com/'));)
+    $scope.items = $firebase(new Firebase('https://powerhack.firebaseio.com/')));
 
   });
