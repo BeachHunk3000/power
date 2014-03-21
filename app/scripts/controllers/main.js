@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('powerApp')
-  .controller('MainCtrl', function ($scope, $http, $firebase, Auth) {
+  .controller('MainCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin) {
 	$scope.method = 'GET';
 	$scope.url = 'https://api.demosteinkjer.no/downloads/361';
 
@@ -25,4 +25,12 @@ angular.module('powerApp')
 				console.log(status);
 			});
 	};
+
+  $scope.logout = function() {
+      simpleLogin.logout(function(err) {
+        $scope.err = err? err + '' : null;
+      });
+    };
+
+
   });
