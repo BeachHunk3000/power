@@ -25,8 +25,7 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
     function addSensor(user_uid) {
       var sensorsRef = firebaseRef("/sensors/");
       var usersRef = firebaseRef("/users/");
-      var freeSensor = null;
-
+      var foundSensor = false;
       sensorsRef.once('value', function(sensors) {
         sensors.forEach(function(sensor) {
           console.log(sensor.val());
@@ -34,18 +33,13 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
 
           usersRef.once('value', function(users) {
             users.forEach(function(user) {
-                if(user.val().sensor === freeSensor){
-                  useThisSensor = false;
+                if(!(user.val().sensor === sensor.val())){
+                  var mySensorRef = firebaseRef('/users/' + user_uid + '/sensor');
+                  mySensorRef.set(sensor.val());
+                  foundSensor = true;
                 };
             });
           });
-
-          if(useThisSensor) {
-            var mySensorRef = firebaseRef('/users/' + user_uid + '/sensor');
-            mySensorRef.set(sensor.val());
-            return;
-          };
-
         });
       });
     };
