@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('powerApp')
-  .controller('MainCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin) {
+  .controller('MainCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin, firebaseRef) {
 	$scope.method = 'GET';
 	$scope.url = 'https://api.demosteinkjer.no/meters/0e6e348bfdb74432b6709526527c3d12/latest?seriesType=ActivePlus';
 
@@ -30,6 +30,5 @@ angular.module('powerApp')
         $scope.err = err? err + '' : null;
       });
     };
-
 
   });

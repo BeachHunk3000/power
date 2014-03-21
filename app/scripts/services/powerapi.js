@@ -3,14 +3,14 @@
 angular.module('powerApp')
   .service('Powerapi', function Powerapi($http, Auth) {
     
-	var meterID = "00e841fbefc54352ac70a49806761983";
+	var meterID = "0e6e348bfdb74432b6709526527c3d12";
 	var LatestValue_url = 'https://api.demosteinkjer.no/meters/' + meterID + '/latest?seriesType=ActivePlus';
 	var url = "https://api.demosteinkjer.no/meters/" + meterID;
 
     Auth.setCredentials("3749f5da4f0d427faf9ed00bb616576e", "7bf19829a91144028101feb1740bafb9");
     var apiNumber;
 
-	$scope.fetch = function() {
+	function fetch() {
 		var xsrf = $.param({ // verdiene i formen.
 				seriesType: 'ActivePlus',
 				dateFrom: '2013-12-12',
@@ -44,4 +44,8 @@ angular.module('powerApp')
 			});
 		});
 	};
+
+	return {
+		getLatestReading: function()
+	}
   });
