@@ -48,5 +48,4 @@ angular.module('powerApp')
       });
     };
 
-
   });

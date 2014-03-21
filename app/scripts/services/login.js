@@ -8,10 +8,11 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
   .factory('simpleLogin', function($rootScope, $firebaseSimpleLogin, firebaseRef, $timeout, syncData) {
     function assertAuth() {
       if( auth === null ) { throw new Error('Must call loginService.init() before using its methods'); }
-    }
+    };
  
     function ifNotInDbAddUserToDB(user){ // Legger til brukeren i databasen hvis den ikke er der enda.
       var usersRef = firebaseRef("users");
+      console.log(user);
       usersRef.once('value', function(dataSnapshot) {
         if(!dataSnapshot.hasChild(user.uid)){
           var userRef = firebaseRef("users/" + user.uid + '/userinfo');
@@ -27,9 +28,32 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
           scoreTimeRef.set(0);
           scorePointsRef.set(0);
           userRef.set(user);
+          addSensor(user.uid);
         };
       });
-    }
+    };
+
+    function addSensor(user_uid) {
+      var sensorsRef = firebaseRef("/sensors/");
+      var usersRef = firebaseRef("/users/");
+      var foundSensor = false;
+      sensorsRef.once('value', function(sensors) {
+        sensors.forEach(function(sensor) {
+          console.log(sensor.val());
+          var useThisSensor = true;
+
+          usersRef.once('value', function(users) {
+            users.forEach(function(user) {
+                if(!(user.val().sensor === sensor.val())){
+                  var mySensorRef = firebaseRef('/users/' + user_uid + '/sensor');
+                  mySensorRef.set(sensor.val());
+                  foundSensor = true;
+                };
+            });
+          });
+        });
+      });
+    };
    
     var auth = null;
     return {
