@@ -12,7 +12,6 @@ angular.module('powerApp')
 		//$scope.response = null;
 
 		//$http({method: 'GET', url: 'www.google.com/someapi', headers: {'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='}});
-		console.log("get");
 		$http({method: $scope.method,
 			url: $scope.url,
 			headers: {'Content-type': 'application/json'}})
