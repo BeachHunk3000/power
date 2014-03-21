@@ -36,7 +36,9 @@ angular.module('powerApp')
 
     i++;
     });
+    
     $scope.$apply($scope.nameArray);
+    $scope.$apply($scope.coins);
   });
 
 

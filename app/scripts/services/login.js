@@ -22,7 +22,7 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
           var scoreValueRef = firebaseRef("users/" + user.uid + "/score/value");
           var scorecoinsRef = firebaseRef("users/" + user.uid + "/score/coins");
 
-          coinRef.set(100);
+          scorecoinsRef.set(100);
           scoreValueRef.set(0);
           scoreTimeRef.set(0);
           scorePointsRef.set(0);
