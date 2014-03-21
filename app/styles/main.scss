@@ -9,6 +9,10 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     padding: 0.2em 0;
 }
 
+.login{
+    text-align: center;
+}
+
 /* Space out content a bit */
 body {
     padding-top: 20px;
@@ -21,6 +25,7 @@ body {
 .footer {
     padding-left: 15px;
     padding-right: 15px;
+    text-align: center;
 }
 
 /* Custom page header */
