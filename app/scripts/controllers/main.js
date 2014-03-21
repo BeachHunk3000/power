@@ -6,6 +6,13 @@ angular.module('powerApp')
       $scope.awesomeThings = awesomeThings;
     });
 
-    $scope.items = $firebase(new Firebase('https://powerhack.firebaseio.com/')));
+    $scope.items = $firebase(new Firebase('https://powerhack.firebaseio.com/'));
 
+	$scope.testApi = $http({method: 'GET', url: 'https://api.demosteinkjer.no'}).
+		success(function(data, status, headers, config) {
+		  console.log(data);
+		}).
+		error(function(data, status, headers, config) {
+		  console.log(data);
+		});
   });
