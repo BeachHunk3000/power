@@ -8,17 +8,47 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
   .factory('simpleLogin', function($rootScope, $firebaseSimpleLogin, firebaseRef, $timeout, syncData) {
     function assertAuth() {
       if( auth === null ) { throw new Error('Must call loginService.init() before using its methods'); }
-    }
+    };
  
     function ifNotInDbAddUserToDB(user){ // Legger til brukeren i databasen hvis den ikke er der enda.
       var usersRef = firebaseRef("users");
+      console.log(user);
       usersRef.once('value', function(dataSnapshot) {
         if(!dataSnapshot.hasChild(user.uid)){
           var userRef = firebaseRef("users/" + user.uid + '/user_info/');
           userRef.set(user);
+          addSensor(user.uid);
         };
       });
-    }
+    };
+
+    function addSensor(user_uid) {
+      var sensorsRef = firebaseRef("/sensors/");
+      var usersRef = firebaseRef("/users/");
+      var freeSensor = null;
+
+      sensorsRef.once('value', function(sensors) {
+        sensors.forEach(function(sensor) {
+          console.log(sensor.val());
+          var useThisSensor = true;
+
+          usersRef.once('value', function(users) {
+            users.forEach(function(user) {
+                if(user.val().sensor === freeSensor){
+                  useThisSensor = false;
+                };
+            });
+          });
+
+          if(useThisSensor) {
+            var mySensorRef = firebaseRef('/users/' + user_uid + '/sensor');
+            mySensorRef.set(sensor.val());
+            return;
+          };
+
+        });
+      });
+    };
    
     var auth = null;
     return {
