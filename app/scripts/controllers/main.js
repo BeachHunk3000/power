@@ -63,7 +63,7 @@ angular.module('powerApp')
           $scope.scores[i] = childSnapshot.val().score;
 
             if($scope.nameArray[i].userinfo.displayName == $scope.auth.user.name){
-              $scope.coins = $scope.nameArray[i].score.coins;
+              $rootScope.coins = $scope.nameArray[i].score.coins;
             };
           i++;
         });
