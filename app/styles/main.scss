@@ -2,6 +2,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
 html {
   overflow: hidden;
 }
@@ -169,6 +171,18 @@ html {
 #store_item_4 {
   height: 30px;
 }
+
+.hagenavn {
+  font-weight: 900; 
+  font-size: 150%;
+  color: white;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  font-family: 'Poiret One', bold;
+}
+
+
 
 #facebook_button {
   position: absolute;
