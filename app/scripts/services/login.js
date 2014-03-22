@@ -58,7 +58,7 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
       var purchasedItemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
       purchasedItemsRef.set({
         item_1: {hasItem: false, url: "https://s3-eu-west-1.amazonaws.com/powerhack/paafugl.png", price: 30},
-        item_2: {hasItem: false, url: "http://www.clipartlord.com/wp-content/uploads/2014/01/devil2.png", price: 20},
+        item_2: {hasItem: false, url: "http://www.clker.com/cliparts/T/d/3/m/3/X/windmill-hi.png", price: 20},
         item_3: {hasItem: false, url: "http://www.iconarchive.com/download/i7757/hopstarter/sleek-xp-basic/Home.ico", price: 10},
         item_4: {hasItem: false, url: "http://www.freelogovectors.net/wp-content/uploads/2013/02/hippo.png", price: 15},
         item_5: {hasItem: false, url: "http://d1uruifvv9vlhc.cloudfront.net/files/10/585/cartoon-animal-icon-pack-screenshots-7.png", price: 25},
