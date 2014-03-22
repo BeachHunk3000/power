@@ -5,7 +5,7 @@ angular.module('powerApp')
   Auth.setCredentials("3749f5da4f0d427faf9ed00bb616576e", "7bf19829a91144028101feb1740bafb9");
  
 	$scope.items = syncData('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
-	$scope.store_open = false;
+	$scope.store_open = true;
 	var LatestValue_url; // = 'https://api.demosteinkjer.no/meters/' + meterID + '/latest?seriesType=ActivePlus';
 
 	function toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp){
@@ -14,9 +14,17 @@ angular.module('powerApp')
 		return (diffTimeStamp/1000) * (diffTimeStamp/(diffValue*500));
 	}
 
-	$scope.buyItem = function(itemKey) {
+	$scope.buyItem = function(itemKey, price) {
 		var coinsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/score');
-		coinsRef.once('value')
+		var itemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items');
+		coinsRef.once('value', function(datasnap) {
+			if(datasnap.val().coins > price){
+				itemsRef.child(itemKey).update({hasItem: true});
+				coinsRef.once('value', function(datasnapshot) {
+					coinsRef.update({coins: datasnapshot.val().coins-price});
+				});
+			};
+		});
 	};
 
 	$scope.fetch = function() {
