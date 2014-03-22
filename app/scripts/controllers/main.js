@@ -70,21 +70,22 @@ angular.module('powerApp')
  
 
   $scope.sortedArray = [];
-    while($scope.nameArray.length > 1){
-      for(var j=1; j<$scope.nameArray.length; j++){
-        var storst = $scope.nameArray[0].score.points;
-        if($scope.nameArray[j].score.points > storst){
-          storst = $scope.nameArray[j].score.points;
+  var storst = $scope.nameArray[0].score.points;
 
-          var index = $scope.nameArray.indexOf(storst);
+    //for(var k=0; k<3; k++){
+      for(var j=0; j<$scope.nameArray.length; j++){
+        console.log($scope.nameArray.length);
 
-          console.log($scope.nameArray.splice(index, 1));
+        console.log("hei dette er først")
+        console.log($scope.nameArray);
 
-        };
+        $scope.nameArray.splice(j,1);
+
+
+      
       };
     $scope.sortedArray.push(storst);  
-    console.log($scope.sortedArray);
-     }
+    //}
         
 
 

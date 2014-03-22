@@ -5,7 +5,7 @@ angular.module('powerApp')
 
     $scope.login = function(service) {
       simpleLogin.login(service, function(err) {
-        $scope.err = err? err + '' : $location.path('#/main');
+        $scope.err = err? err + '' : $location.path('#/garden');
       });
     };
   });
