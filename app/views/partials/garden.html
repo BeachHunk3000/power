@@ -9,8 +9,8 @@
 <div ng-show="store_open">
 	<div ng-repeat="(key,item) in items">
 		<img id="store_{{key}}" ng-show="!item.hasItem" src="{{item.url}}" alt="Smiley face">
-		<button ng-click="buyItem(key)">KJØP</button>
-		<p>Price: {{item.price}}</p>
+		<button ng-click="buyItem(key, item.price)" ng-show="!item.hasItem">KJØP</button>
+		<p ng-show="!item.hasItem">Price: {{item.price}}</p>
 	</div>
 </div>
 
