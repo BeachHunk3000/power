@@ -344,10 +344,15 @@ left: 202px;
 #pupup_tilbake {
   background-color: blue;
   height: 50px;
-  margin-top: 337px;
   background: url("https://s3-eu-west-1.amazonaws.com/powerhack/okay.png") center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+#shareFB {
+  width: 100%;
+  margin-top: 306px;
+  background-color: #5b77b4;
 }
