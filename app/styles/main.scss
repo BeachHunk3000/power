@@ -2,7 +2,9 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
-#bakgrunn {
+/*------------LOGIN------------*/
+
+#login-bakgrunn {
   background: url('https://s3-eu-west-1.amazonaws.com/powerhack/login.png') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -25,3 +27,84 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   margin-top: 110%;
   opacity: 0.95;
 }
+
+
+
+
+/*------------Score------------*/
+
+#score-bakgrunn {
+  background: url('https://s3-eu-west-1.amazonaws.com/powerhack/background.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.innhold {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+#scoreboard {
+  width: 90%;
+  margin-top: 20%;
+}
+
+.tittel {
+  position: absolute;
+  top: 12%;
+  left: 36%;
+  color: white;
+  opacity: 0.8;
+}
+
+#score-list {
+  position: absolute;
+  top: 25%;
+}
+
+.score-listing {
+  color: white;
+  opacity: 0.8;
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
