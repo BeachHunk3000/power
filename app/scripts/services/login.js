@@ -57,12 +57,12 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
     function initShop() {
       var purchasedItemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
       purchasedItemsRef.set({
-        item_1: {hasItem: false, url: "http://dhtmlconf.com/img/spinningearth.gif"},
-        item_2: {hasItem: false, url: "http://dhtmlconf.com/img/new.gif"},
-        item_3: {hasItem: false, url: "http://dhtmlconf.com/img/hot.gif"},
-        item_4: {hasItem: false, url: "http://dhtmlconf.com/img/counter2.gif"},
-        item_5: {hasItem: false, url: "http://dhtmlconf.com/img/notepad.gif"},
-        item_6: {hasItem: false, url: "http://dhtmlconf.com/img/ie_logo.gif"}
+        item_1: {hasItem: false, url: "http://dhtmlconf.com/img/spinningearth.gif", price: 30},
+        item_2: {hasItem: false, url: "http://dhtmlconf.com/img/new.gif", price: 20},
+        item_3: {hasItem: false, url: "http://dhtmlconf.com/img/hot.gif", price: 10},
+        item_4: {hasItem: false, url: "http://dhtmlconf.com/img/counter2.gif", price: 15},
+        item_5: {hasItem: false, url: "http://dhtmlconf.com/img/notepad.gif", price: 25},
+        item_6: {hasItem: false, url: "http://dhtmlconf.com/img/ie_logo.gif", price: 5}
       });
     }
 
