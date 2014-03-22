@@ -49,6 +49,7 @@ angular.module('powerApp')
       });
 	};
 
+
   var userReflol = firebaseRef("users/" + $rootScope.auth.user.uid + "/sensor");
 
   userReflol.once('value', function(dataSnapshot) {
@@ -57,7 +58,7 @@ angular.module('powerApp')
     });
   });
 
-
+  // Anders
   var userRef = firebaseRef("users/");
   $scope.nameArray = [];
   
@@ -65,12 +66,19 @@ angular.module('powerApp')
     var i=0;
     dataSnapshot.forEach(function(childSnapshot) {
     $scope.nameArray[i] = childSnapshot.val();
-    
-    console.log($scope.nameArray);
+
+    if($scope.nameArray[i].userinfo.displayName == $scope.auth.user.name){
+      $scope.coins = $scope.nameArray[i].score.coins;
+    };
+
     i++;
     });
+    
     $scope.$apply($scope.nameArray);
+    $scope.$apply($scope.coins);
   });
+
+
 
         
 
