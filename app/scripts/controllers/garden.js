@@ -8,11 +8,15 @@ angular.module('powerApp')
 	$scope.store_open = false;
 	var LatestValue_url; // = 'https://api.demosteinkjer.no/meters/' + meterID + '/latest?seriesType=ActivePlus';
 
-  function toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp){
-    var diffValue = newValue - oldValue;
-    var diffTimeStamp = newTimeStamp - oldTimeStamp;
-    return (diffTimeStamp/1000) * (diffTimeStamp/(diffValue*500));
-  }
+	function toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp){
+		var diffValue = newValue - oldValue;
+		var diffTimeStamp = newTimeStamp - oldTimeStamp;
+		return (diffTimeStamp/1000) * (diffTimeStamp/(diffValue*500));
+	}
+
+	$scope.buyItem = function(itemKey) {
+		console.log(itemKey);
+	};
 
 	$scope.fetch = function() {
 		LatestValue_url = 'https://api.demosteinkjer.no/meters/' + $rootScope.sensorID + '/latest?seriesType=ActivePlus';

@@ -2,20 +2,19 @@
 
 <!-- DENNE ER TIL Å PLASSERE I HAGEN -->
 <div ng-repeat="(key,item) in items">
-	<img id="{{key}}" ng-show="item.hasItem" src="{{item.url}}" alt="Smiley face">
+	<img id="garden_{{key}}" ng-show="item.hasItem" src="{{item.url}}" alt="Smiley face">
 </div>
 
 <!-- DENNE ER TIL BUTIKKEN -->
 <div ng-show="store_open">
 	<div ng-repeat="(key,item) in items">
 		<img id="store_{{key}}" ng-show="!item.hasItem" src="{{item.url}}" alt="Smiley face">
+		<button ng-click="buyItem(key)">KJØP</button>
+		<p>Price: {{item.price}}</p>
 	</div>
 </div>
 
 </div>
-
-
-
 
 <img id="gather-button" src="https://s3-eu-west-1.amazonaws.com/powerhack/gatherButton.png" ng-click="">
 
