@@ -29,7 +29,7 @@ angular.module('powerApp', [
         controller: 'LoginCtrl'
       })
       .otherwise({
-        redirectTo: '/d'
+        redirectTo: '/'
       });
       
     $locationProvider.html5Mode(true);
