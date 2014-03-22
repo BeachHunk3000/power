@@ -57,12 +57,12 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
     function initShop() {
       var purchasedItemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
       purchasedItemsRef.set({
-        item_1: {hasItem: false, url: "http://dhtmlconf.com/img/spinningearth.gif", price: 30},
-        item_2: {hasItem: false, url: "http://dhtmlconf.com/img/new.gif", price: 20},
-        item_3: {hasItem: false, url: "http://dhtmlconf.com/img/hot.gif", price: 10},
-        item_4: {hasItem: false, url: "http://dhtmlconf.com/img/counter2.gif", price: 15},
-        item_5: {hasItem: false, url: "http://dhtmlconf.com/img/notepad.gif", price: 25},
-        item_6: {hasItem: false, url: "http://dhtmlconf.com/img/ie_logo.gif", price: 5}
+        item_1: {hasItem: false, url: "https://s3-eu-west-1.amazonaws.com/powerhack/paafugl.png", price: 30},
+        item_2: {hasItem: false, url: "http://www.clker.com/cliparts/T/d/3/m/3/X/windmill-hi.png", price: 20},
+        item_3: {hasItem: false, url: "http://www.iconarchive.com/download/i7757/hopstarter/sleek-xp-basic/Home.ico", price: 10},
+        item_4: {hasItem: false, url: "http://www.freelogovectors.net/wp-content/uploads/2013/02/hippo.png", price: 15},
+        item_5: {hasItem: false, url: "http://d1uruifvv9vlhc.cloudfront.net/files/10/585/cartoon-animal-icon-pack-screenshots-7.png", price: 25},
+        item_6: {hasItem: false, url: "http://icons.iconarchive.com/icons/martin-berube/animal/256/eagle-icon.png", price: 5}
       });
     }
 
