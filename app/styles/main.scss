@@ -150,9 +150,26 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   top: -35px;
 }
 
+#facebook_button {
+  position: absolute;
+  left: 10px;
+  top: 450px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  cursor: hand;
+  background-color: #5b77b4;
+}
 
-
-
+#twitter_button{
+  position: absolute;
+  right: 10px;
+  top: 450px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  cursor: hand;
+}
 
 
 
