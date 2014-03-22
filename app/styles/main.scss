@@ -69,6 +69,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 #score-list {
   position: absolute;
   top: 25%;
+  text-align: center;
+  width: 100%;
 }
 
 .score-listing {
@@ -76,10 +78,29 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   opacity: 0.8;
   font-weight: 100;
   font-size: 1.5em;
+  text-align: center;
 }
 
+#scoreboard-navbar {
+  position: absolute;
+  background-color: black;
+  left: 0;
+}
 
+#hageknapp {
+  position: absolute;
+  width: 165px;
+  height: 55px;
+  top: 60px;
+}
 
+#listeknapp {
+  position: absolute;
+  width: 165px;
+  height: 55px;
+  left: 158px;
+  top: 60px;
+}
 
 
 
