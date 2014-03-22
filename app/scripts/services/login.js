@@ -25,6 +25,7 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
         if(!dataSnapshot.hasChild(user.uid)){
           userRef.set(user)
           addSensor(user.uid);
+          initShop();
         };
       });
     };
@@ -55,7 +56,7 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
 
     function initShop() {
       var purchasedItemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
-      purchasedItemsRef.push({
+      purchasedItemsRef.set({
         item_1: {hasItem: false, url: "http://dhtmlconf.com/img/spinningearth.gif"},
         item_2: {hasItem: false, url: "http://dhtmlconf.com/img/new.gif"},
         item_3: {hasItem: false, url: "http://dhtmlconf.com/img/hot.gif"},
