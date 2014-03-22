@@ -52,49 +52,26 @@ angular.module('powerApp')
   // Anders
   var userRef = firebaseRef("users/");
   $scope.nameArray = [];
-  $scope.namepoints = [];
+  $scope.scores = [];
   
   userRef.once("value", function(dataSnapshot){
     
-    $scope.$apply(function(){
-    var i=0;
-      dataSnapshot.forEach(function(childSnapshot) {
-        $scope.nameArray[i] = childSnapshot.val();
+      $scope.$apply(function(){
+      var i=0;
+        dataSnapshot.forEach(function(childSnapshot) {
+          $scope.nameArray[i] = childSnapshot.val();
+          $scope.scores[i] = childSnapshot.val().score;
 
-          if($scope.nameArray[i].userinfo.displayName == $scope.auth.user.name){
-            $scope.coins = $scope.nameArray[i].score.coins;
-          };
-        i++;
+            if($scope.nameArray[i].userinfo.displayName == $scope.auth.user.name){
+              $scope.coins = $scope.nameArray[i].score.coins;
+            };
+          i++;
+        });
+
       });
-    });
- 
-
-  $scope.sortedArray = [];
-  var storst = $scope.nameArray[0].score.points;
-
-    //for(var k=0; k<3; k++){
-      for(var j=0; j<$scope.nameArray.length; j++){
-        console.log($scope.nameArray.length);
-
-        console.log("hei dette er først")
-        console.log($scope.nameArray);
-
-        $scope.nameArray.splice(j,1);
-
-
-      
-      };
-    $scope.sortedArray.push(storst);  
-    //}
-        
-
-
-
-    console.log($scope.nameArray[0].score.points);
+   
   });
 
-
-        
 
   $scope.logout = function() {
       simpleLogin.logout(function(err) {
