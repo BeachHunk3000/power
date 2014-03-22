@@ -1,12 +1,23 @@
 'use strict';
 
 angular.module('powerApp')
-  .controller('GardenCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin, firebaseRef, syncData, $window) {
+  .controller('GardenCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin, firebaseRef, syncData, $window, $timeout) {
   Auth.setCredentials("3749f5da4f0d427faf9ed00bb616576e", "7bf19829a91144028101feb1740bafb9");
  
 	$scope.items = syncData('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
-	$scope.store_open = true;
+	$scope.store_open = false;
 	var LatestValue_url; // = 'https://api.demosteinkjer.no/meters/' + meterID + '/latest?seriesType=ActivePlus';
+	var coinsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/score');
+	var itemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items');
+
+	$scope.openStore = function() {
+		if($scope.store_open) {
+			$scope.store_open = false;	
+		} else {
+			$scope.store_open = true;	
+		}
+
+	}
 
 	function toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp){
 		var diffValue = newValue - oldValue;
@@ -14,10 +25,12 @@ angular.module('powerApp')
 		return (diffTimeStamp/1000) * (diffTimeStamp/(diffValue*50000));
 	}
 	
+	coinsRef.once('value', function(datasnap) {
+		$scope.coins = datasnap.val().coins;
+	});
+
 	
 	$scope.buyItem = function(itemKey, price) {
-		var coinsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/score');
-		var itemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items');
 		coinsRef.once('value', function(datasnap) {
 			if(datasnap.val().coins > price){
 				itemsRef.child(itemKey).update({hasItem: true});
@@ -68,9 +81,14 @@ angular.module('powerApp')
 	$scope.showPopUp = function(income, date) {
 		$scope.pupup = true;
 		$scope.$apply(function(){
-			$scope.popup_text = "Du har spart strøm siden " + date.getDate() + '.' + (date.getMonth()+1)
+			$scope.popup_text = "Du har spart strøm siden "
+			$scope.popup_text2 = date.getDate() + '.' + (date.getMonth()+1) + " klokken " + date.getHours()+ ":" + date.getMinutes() 
 			$scope.poeng = income
 		});
+	}
+
+	$scope.back = function(){
+		$scope.pupup = false;
 	}
 
 		//$scope.popup_text = "Du har spart strøm siden " + date.getDate() + "." + (date.getMonth()+1) + 

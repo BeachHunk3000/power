@@ -2,6 +2,12 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+html {
+  overflow: hidden;
+}
+
 /*------------LOGIN------------*/
 
 #login-bakgrunn {
@@ -150,6 +156,36 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   left: 0;
   top: -35px;
 }
+#storeList {
+  margin-top: 67px;
+}
+#store_item_1 {
+  height: 30px;
+}
+
+#store_item_2 {
+  height: 30px;
+}
+
+#store_item_3 {
+  height: 30px;
+}
+
+#store_item_4 {
+  height: 30px;
+}
+
+.hagenavn {
+  font-weight: 900; 
+  font-size: 150%;
+  color: white;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  font-family: 'Poiret One', bold;
+}
+
+
 
 #facebook_button {
   position: absolute;
@@ -172,8 +208,9 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   cursor: hand;
 }
 
+
 #popup {
-  height: 100%;
+  height: 92%;
   width: 100%;
   background-color: blue;
   position: fixed;
@@ -184,6 +221,58 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   background-size: cover;
 }
 
+#store_item_5 {
+  height: 30px;
+}
+
+#store_item_6 {
+  height: 30px;
+}
+
+#garden_item_1 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
+
+#garden_item_2 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
+
+#garden_item_3 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
+
+#garden_item_4 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
+
+#garden_item_5 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
+
+#garden_item_6 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
+
+#shopicon {
+  position: absolute;
+  height: 30px;
+  top: 10px;
+  left: 5px;
+}
+
+
 #poengButton {
   width: 100%;
 }
@@ -191,3 +280,49 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 #textButton{
   width: 100%;
 }
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear;
+    -moz-transition: opacity 0.15s linear;
+    -o-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+}
+.fade.in {
+    opacity: 1;
+}
+
+#scoreboard-navbar2 {
+  position: absolute;
+  background-color: black;
+  left: 0;
+  z-index: 100;
+}
+
+#score-hageknapp2 {
+  position: absolute;
+  width: 165px;
+  height: 55px;
+  top: 60px;
+}
+
+#score-listeknapp2 {
+  position: absolute;
+  width: 165px;
+  height: 55px;
+  left: 158px;
+  top: 60px;
+}
+
+#pupup_tilbake {
+  background-color: blue;
+  height: 50px;
+  margin-top: 337px;
+  background: url("https://s3-eu-west-1.amazonaws.com/powerhack/okay.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+//   background: url("http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/4163320.jpg") no-repeat center center fixed;

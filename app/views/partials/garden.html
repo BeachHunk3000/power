@@ -9,7 +9,7 @@
 <button id="twitter_button" class="btn btn-twitter"><i class="fa fa-twitter" id="twitter_button_i"></i></button>
 
 <!-- DENNE ER TIL BUTIKKEN -->
-<div ng-show="store_open">
+<div id="storeList" ng-show="store_open">
 	<div ng-repeat="(key,item) in items">
 		<img id="store_{{key}}" ng-show="!item.hasItem" src="{{item.url}}" alt="Smiley face">
 		<button ng-click="buyItem(key, item.price)" ng-show="!item.hasItem">KJØP</button>
@@ -18,18 +18,33 @@
 </div>
 
 <div ng-show="pupup" id="popup">
-		<button id="poengButton" class="btn-large btn-success"><h3> + {{poeng}} coins</h3></button>
-		<button id="textButton" class="btn-large btn-info"><h4>{{popup_text}}</h4></button>
+	<button id="poengButton" class="btn-large btn-success"><h3> + {{poeng}} coins</h3></button>
+	<button id="textButton" class="btn-large btn-info">
+		<h4>{{popup_text}}</h4>
+		<h4>{{popup_text2}}</h4>
+	</button>
+	<div id = "pupup_tilbake" ng-click="back()">
+	</div>
 </div>
-
 <div id="topbar">
 	<img src="https://s3-eu-west-1.amazonaws.com/powerhack/topbar.png">
+</div>
+
+<img id="shopicon" src="https://s3-eu-west-1.amazonaws.com/powerhack/shop.png" ng-click="openStore()">
+
+<div class="hagenavn">
+
+  {{auth.user.first_name}}  sin hage
+  &nbsp 
+  {{coins |number:0}}
+  <img src="https://s3-eu-west-1.amazonaws.com/powerhack/blad.png">
 </div>
 
 
 	<img id="gather-button" src="https://s3-eu-west-1.amazonaws.com/powerhack/gatherButton.png" ng-click="fetch()">
 
-<div id="scoreboard-navbar">
+<div id="scoreboard-navbar" ng-hide="pupup">
+
 	<a href="/garden">
 		<img id="garden-hageknapp" src="https://s3-eu-west-1.amazonaws.com/powerhack/garden-hageknapp.png">
 	</a>
@@ -37,6 +52,7 @@
 		<img id="garden-listeknapp" src="https://s3-eu-west-1.amazonaws.com/powerhack/garden-listaknapp.png">
 	</a>
 </div>
+
 
 </div>
 
