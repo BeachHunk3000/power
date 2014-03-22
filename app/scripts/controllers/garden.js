@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('powerApp')
-  .controller('GardenCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin, firebaseRef, syncData) {
+  .controller('GardenCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin, firebaseRef, syncData, $window) {
   Auth.setCredentials("3749f5da4f0d427faf9ed00bb616576e", "7bf19829a91144028101feb1740bafb9");
  
 	$scope.items = syncData('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
@@ -11,9 +11,10 @@ angular.module('powerApp')
 	function toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp){
 		var diffValue = newValue - oldValue;
 		var diffTimeStamp = newTimeStamp - oldTimeStamp;
-		return (diffTimeStamp/1000) * (diffTimeStamp/(diffValue*500));
+		return (diffTimeStamp/1000) * (diffTimeStamp/(diffValue*50000));
 	}
-
+	
+	
 	$scope.buyItem = function(itemKey, price) {
 		var coinsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/score');
 		var itemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items');
@@ -55,6 +56,10 @@ angular.module('powerApp')
 					points: oldPoints+toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp),
 					coins: oldCoins+toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp)
 				});
+				var date = new Date(oldTimeStamp);
+				$window.alert("Du har fått " + Math.floor(toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp)) + 
+						" penispenger for å spare strøm siden " + date.getDate() + "." + (date.getMonth()+1) + 
+						" klokken " + date.getHours() + ":" + date.getMinutes() + "\nBra jobbet!"); 
 			});
 		}).error(function(data, status) {
 		console.log(data || "Request failed");
