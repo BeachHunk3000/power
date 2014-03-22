@@ -57,7 +57,7 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
     function initShop() {
       var purchasedItemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
       purchasedItemsRef.set({
-        item_1: {hasItem: false, url: "http://dhtmlconf.com/img/spinningearth.gif", price: 30},
+        item_1: {hasItem: false, url: "https://s3-eu-west-1.amazonaws.com/powerhack/paafugl.png", price: 30},
         item_2: {hasItem: false, url: "http://dhtmlconf.com/img/new.gif", price: 20},
         item_3: {hasItem: false, url: "http://dhtmlconf.com/img/hot.gif", price: 10},
         item_4: {hasItem: false, url: "http://dhtmlconf.com/img/counter2.gif", price: 15},

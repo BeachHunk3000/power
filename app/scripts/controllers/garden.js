@@ -7,6 +7,10 @@ angular.module('powerApp')
 	$scope.items = syncData('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
 	$scope.store_open = true;
 	var LatestValue_url; // = 'https://api.demosteinkjer.no/meters/' + meterID + '/latest?seriesType=ActivePlus';
+	var coinsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/score');
+	var itemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items');
+
+
 
 	function toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp){
 		var diffValue = newValue - oldValue;
@@ -14,10 +18,12 @@ angular.module('powerApp')
 		return (diffTimeStamp/1000) * (diffTimeStamp/(diffValue*50000));
 	}
 	
+	coinsRef.once('value', function(datasnap) {
+		$scope.coins = datasnap.val().coins;
+	});
+
 	
 	$scope.buyItem = function(itemKey, price) {
-		var coinsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/score');
-		var itemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items');
 		coinsRef.once('value', function(datasnap) {
 			if(datasnap.val().coins > price){
 				itemsRef.child(itemKey).update({hasItem: true});

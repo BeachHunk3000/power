@@ -2,6 +2,12 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+html {
+  overflow: hidden;
+}
+
 /*------------LOGIN------------*/
 
 #login-bakgrunn {
@@ -150,6 +156,34 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   top: -35px;
 }
 
+#store_item_1 {
+  height: 30px;
+}
+
+#store_item_2 {
+  height: 30px;
+}
+
+#store_item_3 {
+  height: 30px;
+}
+
+#store_item_4 {
+  height: 30px;
+}
+
+.hagenavn {
+  font-weight: 900; 
+  font-size: 150%;
+  color: white;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  font-family: 'Poiret One', bold;
+}
+
+
+
 #facebook_button {
   position: absolute;
   left: 10px;
@@ -161,7 +195,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   background-color: #5b77b4;
 }
 
-#twitter_button{
+#twitter_button {
   position: absolute;
   right: 10px;
   top: 450px;
@@ -171,12 +205,47 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   cursor: hand;
 }
 
+#store_item_5 {
+  height: 30px;
+}
 
+#store_item_6 {
+  height: 30px;
+}
 
+#garden_item_1 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
+#garden_item_2 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
+#garden_item_3 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
+#garden_item_4 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
+#garden_item_5 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
-
+#garden_item_6 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
