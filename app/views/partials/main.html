@@ -9,9 +9,9 @@
 
 
 	<div id="score-list">
-		<div ng-repeat="stuff in nameArray | orderBy: 'score.points' : true">
+		<div ng-repeat="stuff in nameArray | orderBy: 'score.points' : true" >
 			<div class="score-listing">
-				<em>{{stuff.userinfo.first_name}}</em>: {{stuff.score.points}}
+				<em>{{stuff.userinfo.first_name}}</em>: {{stuff.score.points |number:0}}
 			</div>
 		</div>
 	</div>
