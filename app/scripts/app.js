@@ -18,13 +18,18 @@ angular.module('powerApp', [
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
+      .when('/garden', {
+        authRequired: false,
+        templateUrl: 'partials/garden',
+        controller: 'GardenCtrl'
+      })
       .when('/login', {
         authRequired: false,
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/garden'
       });
       
     $locationProvider.html5Mode(true);

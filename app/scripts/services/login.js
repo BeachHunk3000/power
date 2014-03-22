@@ -5,10 +5,8 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
     simpleLogin.init();
     $rootScope.$on('$firebaseSimpleLogin:login', function() {
       var userReflol = firebaseRef("users/" + $rootScope.auth.user.uid + "/sensor");
-      console.log("HEIASDASD");
       userReflol.once('value', function(dataSnapshot) {
         dataSnapshot.forEach(function(pikk) {
-          console.log("HEI");
           $rootScope.sensorID = pikk.val();
         });
       });
