@@ -45,7 +45,7 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
             users.forEach(function(user) {
                 if(!(user.val().sensor === sensor.val())){
                   var mySensorRef = firebaseRef('/users/' + user_uid + '/sensor');
-                  mySensorRef.set(sensor.val());
+                  mySensorRef.set({key: sensor.val()});
                   foundSensor = true;
                 };
             });
