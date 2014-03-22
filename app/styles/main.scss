@@ -142,8 +142,11 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   top: 450px;
 }
 
-
-
+#topbar {
+  position: absolute;
+  left: 0;
+  top: -35px;
+}
 
 
 

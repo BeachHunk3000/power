@@ -15,7 +15,8 @@ angular.module('powerApp')
 	}
 
 	$scope.buyItem = function(itemKey) {
-		console.log(itemKey);
+		var coinsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/score');
+		coinsRef.once('value')
 	};
 
 	$scope.fetch = function() {
