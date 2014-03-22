@@ -87,14 +87,14 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   left: 0;
 }
 
-#hageknapp {
+#score-hageknapp {
   position: absolute;
   width: 165px;
   height: 55px;
   top: 60px;
 }
 
-#listeknapp {
+#score-listeknapp {
   position: absolute;
   width: 165px;
   height: 55px;
@@ -104,13 +104,43 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 
 
+/*------------Garden------------*/
 
+#garden-background {
+  background: url('https://s3-eu-west-1.amazonaws.com/powerhack/background.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+}
 
+#garden-hageknapp {
+  position: absolute;
+  width: 165px;
+  height: 55px;
+  top: 520px;
+}
 
+#garden-listeknapp {
+  position: absolute;
+  width: 165px;
+  height: 55px;
+  left: 158px;
+  top: 520px;
+}
 
-
-
-
+#gather-button {
+  position: absolute;
+  width: 180px;
+  left: 70px;
+  top: 450px;
+}
 
 
 
