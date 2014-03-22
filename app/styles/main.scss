@@ -91,6 +91,7 @@ html {
   position: absolute;
   background-color: black;
   left: 0;
+  z-index: 100;
 }
 
 #score-hageknapp {
@@ -177,6 +178,25 @@ html {
   height: 30px;
 }
 
+#store_item_5 {
+  height: 30px;
+}
+
+#store_item_6 {
+  height: 30px;
+}
+#store_item_7 {
+  height: 30px;
+}
+
+#store_item_8 {
+  height: 30px;
+}
+
+#store_item_9 {
+  height: 30px;
+}
+
 .hagenavn {
   font-weight: 900; 
   font-size: 150%;
@@ -191,67 +211,88 @@ html {
 
 #facebook_button {
   position: absolute;
-  left: 10px;
-  top: 450px;
-  height: 46px;
-  width: 46px;
+
+  left: 150px;
+  top: 410px;
+
   cursor: pointer;
   cursor: hand;
   background-color: #5b77b4;
 }
 
-#twitter_button {
-  position: absolute;
-  right: 10px;
-  top: 450px;
-  height: 46px;
-  width: 46px;
-  cursor: pointer;
-  cursor: hand;
-}
 
-#store_item_5 {
-  height: 30px;
-}
-
-#store_item_6 {
-  height: 30px;
+#popup {
+  height: 92%;
+  width: 100%;
+  background-color: blue;
+  position: fixed;
+  top: 0;
+  top: 45px;
+  z-index: 10;
+  background: url("http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/4163320.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 #garden_item_1 {
-  position: absolute;
-  height: 130px;
-  top: 300px;
+position: absolute;
+height: 79px;
+top: 300px;
+left: 93px;
 }
 
 #garden_item_2 {
   position: absolute;
   height: 130px;
-  top: 300px;
+  top: 214px;
+  left: 214px;
 }
 
 #garden_item_3 {
-  position: absolute;
-  height: 130px;
-  top: 300px;
+position: absolute;
+height: 70px;
+top: 221px;
+left: 120px;
 }
 
 #garden_item_4 {
-  position: absolute;
-  height: 130px;
-  top: 300px;
+position: absolute;
+height: 103px;
+top: 338px;
+left: 20px;
 }
 
 #garden_item_5 {
-  position: absolute;
-  height: 130px;
-  top: 300px;
+position: absolute;
+height: 71px;
+top: 370px;
+left: 215px;
 }
 
 #garden_item_6 {
   position: absolute;
-  height: 130px;
-  top: 300px;
+  height: 38px;
+  top: 196px;
+  left: 81px;
+}
+#garden_item_7 {
+position: absolute;
+height: 103px;
+top: 215px;
+left: 136px;
+}
+
+#garden_item_8 {
+position: absolute;
+height: 71px;
+top: 105px;
+left: 106px;
+}
+
+#garden_item_9 {
+position: absolute;
+height: 136px;
+top: 351px;
+left: 202px;
 }
 
 #shopicon {
@@ -336,4 +377,54 @@ html {
 }
 
 
+#poengButton {
+  width: 100%;
+}
 
+#textButton{
+  width: 100%;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear;
+    -moz-transition: opacity 0.15s linear;
+    -o-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+}
+.fade.in {
+    opacity: 1;
+}
+
+#scoreboard-navbar2 {
+  position: absolute;
+  background-color: black;
+  left: 0;
+  z-index: 100;
+}
+
+#score-hageknapp2 {
+  position: absolute;
+  width: 165px;
+  height: 55px;
+  top: 60px;
+}
+
+#score-listeknapp2 {
+  position: absolute;
+  width: 165px;
+  height: 55px;
+  left: 158px;
+  top: 60px;
+}
+
+#pupup_tilbake {
+  background-color: blue;
+  height: 50px;
+  margin-top: 337px;
+  background: url("https://s3-eu-west-1.amazonaws.com/powerhack/okay.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

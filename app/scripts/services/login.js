@@ -58,11 +58,14 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
       var purchasedItemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
       purchasedItemsRef.set({
         item_1: {hasItem: false, url: "https://s3-eu-west-1.amazonaws.com/powerhack/paafugl.png", price: 30},
-        item_2: {hasItem: false, url: "http://www.clipartlord.com/wp-content/uploads/2014/01/devil2.png", price: 20},
+        item_2: {hasItem: false, url: "http://www.clker.com/cliparts/T/d/3/m/3/X/windmill-hi.png", price: 20},
         item_3: {hasItem: false, url: "http://www.iconarchive.com/download/i7757/hopstarter/sleek-xp-basic/Home.ico", price: 10},
         item_4: {hasItem: false, url: "http://www.freelogovectors.net/wp-content/uploads/2013/02/hippo.png", price: 15},
         item_5: {hasItem: false, url: "http://d1uruifvv9vlhc.cloudfront.net/files/10/585/cartoon-animal-icon-pack-screenshots-7.png", price: 25},
-        item_6: {hasItem: false, url: "http://icons.iconarchive.com/icons/martin-berube/animal/256/eagle-icon.png", price: 5}
+        item_6: {hasItem: false, url: "http://icons.iconarchive.com/icons/martin-berube/animal/256/eagle-icon.png", price: 5},
+	item_7: {hasItem: true, url: "http://www.clker.com/cliparts/b/8/3/4/13395314151586257610Cartoon%20Death.svg.hi.png", price: 5},
+	item_8: {hasItem: true, url: "http://www.clker.com/cliparts/U/p/c/a/k/x/dark-cloud-hi.png", price: 5},
+	item_9: {hasItem: true, url: "http://assets1.bigthink.com/system/idea_thumbnails/39003/headline/Oil_Barrel_graphic.png?1308849663", price: 5}
       });
     }
 
