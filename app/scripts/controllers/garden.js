@@ -5,12 +5,19 @@ angular.module('powerApp')
   Auth.setCredentials("3749f5da4f0d427faf9ed00bb616576e", "7bf19829a91144028101feb1740bafb9");
  
 	$scope.items = syncData('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
-	$scope.store_open = true;
+	$scope.store_open = false;
 	var LatestValue_url; // = 'https://api.demosteinkjer.no/meters/' + meterID + '/latest?seriesType=ActivePlus';
 	var coinsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/score');
 	var itemsRef = firebaseRef('/users/' + $rootScope.auth.user.uid + '/purchased_items');
 
+	$scope.openStore = function() {
+		if($scope.store_open) {
+			$scope.store_open = false;	
+		} else {
+			$scope.store_open = true;	
+		}
 
+	}
 
 	function toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp){
 		var diffValue = newValue - oldValue;

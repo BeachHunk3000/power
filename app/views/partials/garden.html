@@ -24,12 +24,14 @@
 	<img src="https://s3-eu-west-1.amazonaws.com/powerhack/topbar.png">
 </div>
 
+<img id="shopicon" src="https://s3-eu-west-1.amazonaws.com/powerhack/shop.png" ng-click="openStore()">
 
 <div class="hagenavn">
 
-  {{auth.user.first_name}} sin hage  
-  <img src="https://s3-eu-west-1.amazonaws.com/powerhack/blad.png">
+  {{auth.user.first_name}}  sin hage
+  &nbsp 
   {{coins |number:0}}
+  <img src="https://s3-eu-west-1.amazonaws.com/powerhack/blad.png">
 </div>
 
 
