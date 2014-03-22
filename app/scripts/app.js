@@ -15,13 +15,13 @@ angular.module('powerApp', [
     $routeProvider
       .when('/', {
         authRequired: true,
-        templateUrl: 'partials/main',
-        controller: 'MainCtrl'
-      })
-      .when('/garden', {
-        authRequired: false,
         templateUrl: 'partials/garden',
         controller: 'GardenCtrl'
+      })
+      .when('/main', {
+        authRequired: true,
+        templateUrl: 'partials/main',
+        controller: 'MainCtrl'
       })
       .when('/login', {
         authRequired: false,
