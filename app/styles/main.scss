@@ -2,6 +2,12 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+html {
+  overflow: hidden;
+}
+
 /*------------LOGIN------------*/
 
 #login-bakgrunn {
@@ -148,6 +154,19 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   top: -35px;
 }
 
+.hagenavn {
+  font-weight: 900; 
+  font-size: 150%;
+  color: white;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  font-family: 'Poiret One', bold;
+}
+
+.leaf {
+  position: absolute;
+}
 
 
 
