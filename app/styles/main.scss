@@ -2,6 +2,10 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
+html {
+  overflow: hidden;
+}
+
 /*------------LOGIN------------*/
 
 #login-bakgrunn {
@@ -150,16 +154,63 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   top: -35px;
 }
 
+#store_item_1 {
+  height: 30px;
+}
 
+#store_item_2 {
+  height: 30px;
+}
 
+#store_item_3 {
+  height: 30px;
+}
 
+#store_item_4 {
+  height: 30px;
+}
 
+#store_item_5 {
+  height: 30px;
+}
 
+#store_item_6 {
+  height: 30px;
+}
 
+#garden_item_1 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
+#garden_item_2 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
+#garden_item_3 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
+#garden_item_4 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
+#garden_item_5 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
-
+#garden_item_6 {
+  position: absolute;
+  height: 130px;
+  top: 300px;
+}
 
