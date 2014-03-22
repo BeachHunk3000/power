@@ -12,8 +12,9 @@
 <div id="storeList" ng-show="store_open">
 	<div ng-repeat="(key,item) in items">
 		<img id="store_{{key}}" ng-show="!item.hasItem" src="{{item.url}}" alt="Smiley face">
-		<button ng-click="buyItem(key, item.price)" ng-show="!item.hasItem">KJØP</button>
-		<p ng-show="!item.hasItem">Price: {{item.price}}</p>
+		<img id="store_button_{{key}}" ng-click="buyItem(key, item.price)" ng-show="!item.hasItem" src="https://s3-eu-west-1.amazonaws.com/powerhack/kjopp.png">
+
+		<p id="store_text_{{key}}" ng-show="!item.hasItem">Price: {{item.price}}</p>
 	</div>
 </div>
 

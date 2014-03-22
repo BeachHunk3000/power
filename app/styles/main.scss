@@ -156,7 +156,10 @@ html {
   top: -35px;
 }
 #storeList {
-  margin-top: 67px;
+  position: absolute;
+  padding-top: 67px;
+  width: 200px;
+  background: url('https://s3-eu-west-1.amazonaws.com/powerhack/side.png') no-repeat center center fixed; 
 }
 #store_item_1 {
   height: 30px;
@@ -256,26 +259,81 @@ html {
   height: 30px;
   top: 10px;
   left: 5px;
+  cursor: pointer;
+  cursor: hand;
 }
 
+#store_button_item_1 {
+  position: absolute;
+  height: 35px;
+  left: 128px; 
+  cursor: pointer;
+  cursor: hand;
+}
 
+#store_button_item_2 {
+  position: absolute;
+  height: 35px;
+  left: 128px;
+  cursor: pointer;
+  cursor: hand;
+}
 
+#store_button_item_3 {
+  position: absolute;
+  height: 35px;
+  left: 128px;
+  cursor: pointer;
+  cursor: hand;
+}
 
+#store_button_item_4 {
+  position: absolute;
+  height: 35px;
+  left: 128px;  
+  cursor: pointer;
+  cursor: hand;
+}
 
+#store_button_item_5 {
+  position: absolute;
+  height: 35px;
+  left: 128px; 
+  cursor: pointer;
+  cursor: hand;
+}
 
+#store_button_item_6 {
+  position: absolute;
+  height: 35px;
+  left: 128px; 
+  cursor: pointer;
+  cursor: hand;
+}
 
+#store_text_item_1 {
+  color: white;
+}
 
+#store_text_item_2 {
+  color: white; 
+}
 
+#store_text_item_3 {
+  color: white; 
+}
 
+#store_text_item_4 {
+  color: white;
+}
 
+#store_text_item_5 {
+ color: white; 
+}
 
-
-
-
-
-
-
-
+#store_text_item_6 {
+  color: white;
+}
 
 
 
