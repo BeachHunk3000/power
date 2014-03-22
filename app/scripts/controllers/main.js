@@ -61,21 +61,44 @@ angular.module('powerApp')
   // Anders
   var userRef = firebaseRef("users/");
   $scope.nameArray = [];
+  $scope.namepoints = [];
   
   userRef.once("value", function(dataSnapshot){
     
     $scope.$apply(function(){
     var i=0;
-    dataSnapshot.forEach(function(childSnapshot) {
-      $scope.nameArray[i] = childSnapshot.val();
+      dataSnapshot.forEach(function(childSnapshot) {
+        $scope.nameArray[i] = childSnapshot.val();
 
-        if($scope.nameArray[i].userinfo.displayName == $scope.auth.user.name){
-          $scope.coins = $scope.nameArray[i].score.coins;
-        };
-      i++;
+          if($scope.nameArray[i].userinfo.displayName == $scope.auth.user.name){
+            $scope.coins = $scope.nameArray[i].score.coins;
+          };
+        i++;
+      });
     });
-    })
+ 
 
+  $scope.sortedArray = [];
+    while($scope.nameArray.length > 1){
+      for(var j=1; j<$scope.nameArray.length; j++){
+        var storst = $scope.nameArray[0].score.points;
+        if($scope.nameArray[j].score.points > storst){
+          storst = $scope.nameArray[j].score.points;
+
+          var index = $scope.nameArray.indexOf(storst);
+
+          console.log($scope.nameArray.splice(index, 1));
+
+        };
+      };
+    $scope.sortedArray.push(storst);  
+    console.log($scope.sortedArray);
+     }
+        
+
+
+
+    console.log($scope.nameArray[0].score.points);
   });
 
 
