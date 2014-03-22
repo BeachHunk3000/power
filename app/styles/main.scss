@@ -85,6 +85,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   position: absolute;
   background-color: black;
   left: 0;
+  z-index: 100;
 }
 
 #score-hageknapp {
@@ -161,7 +162,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   background-color: #5b77b4;
 }
 
-#twitter_button{
+#twitter_button {
   position: absolute;
   right: 10px;
   top: 450px;
@@ -171,12 +172,22 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   cursor: hand;
 }
 
+#popup {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+  position: fixed;
+  top: 0;
+  top: 45px;
+  z-index: 10;
+  background: url("http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/4163320.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
 
+#poengButton {
+  width: 100%;
+}
 
-
-
-
-
-
-
-
+#textButton{
+  width: 100%;
+}

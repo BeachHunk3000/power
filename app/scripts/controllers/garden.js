@@ -57,13 +57,24 @@ angular.module('powerApp')
 					coins: oldCoins+toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp)
 				});
 				var date = new Date(oldTimeStamp);
-				$window.alert("Du har fått " + Math.floor(toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp)) + 
-						" penispenger for å spare strøm siden " + date.getDate() + "." + (date.getMonth()+1) + 
-						" klokken " + date.getHours() + ":" + date.getMinutes() + "\nBra jobbet!"); 
+				$scope.showPopUp(Math.floor(toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp)), date);
 			});
 		}).error(function(data, status) {
 		console.log(data || "Request failed");
 		console.log(status);
 		});
 	};  
+
+	$scope.showPopUp = function(income, date) {
+		$scope.pupup = true;
+		$scope.$apply(function(){
+			$scope.popup_text = "Du har spart strøm siden " + date.getDate() + '.' + (date.getMonth()+1)
+			$scope.poeng = income
+		});
+	}
+
+		//$scope.popup_text = "Du har spart strøm siden " + date.getDate() + "." + (date.getMonth()+1) + 
+		//" klokken " + date.getHours() + ":" + date.getMinutes() + "\nBra jobbet!"
+
+	$scope.pupup = false;
   });
