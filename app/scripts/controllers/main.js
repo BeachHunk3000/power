@@ -4,9 +4,8 @@ angular.module('powerApp')
   .controller('MainCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin, firebaseRef) {
   Auth.setCredentials("3749f5da4f0d427faf9ed00bb616576e", "7bf19829a91144028101feb1740bafb9");
 
-    var meterID;
     var LatestValue_url; // = 'https://api.demosteinkjer.no/meters/' + meterID + '/latest?seriesType=ActivePlus';
-    var url = "https://api.demosteinkjer.no/meters/" + meterID;
+    var url = "https://api.demosteinkjer.no/meters/" + $rootScope.sensorID;
     var apiNumber;
 
   function toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp){
@@ -16,7 +15,7 @@ angular.module('powerApp')
   }
 
   $scope.fetch = function() {
-      LatestValue_url = 'https://api.demosteinkjer.no/meters/' + meterID + '/latest?seriesType=ActivePlus';
+      LatestValue_url = 'https://api.demosteinkjer.no/meters/' + $rootScope.sensorID + '/latest?seriesType=ActivePlus';
       $http({
         method: 'GET',
         url: LatestValue_url,
@@ -31,6 +30,7 @@ angular.module('powerApp')
           var oldCoins = points.val().coins;
 
           var newValue = parseInt(data.meterReadings[0].meterReading.readings[0].value);
+          console.log(newValue);
           var newTimeStamp = parseInt(Date.parse(data.meterReadings[0].meterReading.readings[0].timeStamp));
 
           console.log(oldPoints);
@@ -48,15 +48,6 @@ angular.module('powerApp')
         console.log(status);
       });
 	};
-
-
-  var userReflol = firebaseRef("users/" + $rootScope.auth.user.uid + "/sensor");
-
-  userReflol.once('value', function(dataSnapshot) {
-    dataSnapshot.forEach(function(pikk) {
-      meterID = pikk.val();
-    });
-  });
 
   // Anders
   var userRef = firebaseRef("users/");
