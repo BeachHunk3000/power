@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('powerApp')
-  .controller('GardenCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin, firebaseRef, syncData) {
+  .controller('GardenCtrl', function ($rootScope, $scope, $http, $firebase, Auth, simpleLogin, firebaseRef, syncData, $window) {
   Auth.setCredentials("3749f5da4f0d427faf9ed00bb616576e", "7bf19829a91144028101feb1740bafb9");
  
 	$scope.items = syncData('/users/' + $rootScope.auth.user.uid + '/purchased_items/');
