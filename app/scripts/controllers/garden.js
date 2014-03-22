@@ -11,7 +11,7 @@ angular.module('powerApp')
   function toPoints(oldValue, newValue, oldTimeStamp, newTimeStamp){
     var diffValue = newValue - oldValue;
     var diffTimeStamp = newTimeStamp - oldTimeStamp;
-    return (diffTimeStamp/1000) * (diffTimeStamp/(diffValue*500));
+    return (diffTimeStamp/1000) * (diffTimeStamp/(diffValue*500)/1000);
   }
 
 	$scope.fetch = function() {
