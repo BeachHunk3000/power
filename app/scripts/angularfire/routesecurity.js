@@ -12,7 +12,7 @@
     this._location = $location;
     this._rootScope = $rootScope;
     this._loginPath = path;
-    this._redirectTo = null;
+    this._redirectTo = "/garden";
     this._authenticated = !!($rootScope.auth && $rootScope.auth.user);
     this._init();
   }
